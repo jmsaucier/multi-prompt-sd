@@ -5,5 +5,4 @@ scipy
 omegaconf
 pytorch_lightning
 einops
-taming
 kornia
