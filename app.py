@@ -13,7 +13,7 @@ from PIL import Image
 from einops import rearrange
 import numpy as np
 
-def load_model_from_config(config, ckpt="models/stable-diffusion-v1/model.ckpt", verbose=False):
+def load_model_from_config(config, ckpt="model.ckpt", verbose=False):
     print(f"Loading model from {ckpt}")
     pl_sd = torch.load(ckpt, map_location="cpu")
     if "global_step" in pl_sd:
@@ -140,4 +140,7 @@ def inference(model_inputs:dict) -> dict:
     image_base64 = base64.b64encode(buffered.getvalue()).decode('utf-8')
 
     # Return the results as a dictionary
-    return {'image_base64': image_base64, 'encoding': encoding}
+    return {
+        # 'image_base64': image_base64, 
+        'encoding': encoding
+        }

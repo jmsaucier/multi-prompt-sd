@@ -10,7 +10,7 @@ model_inputs = {'prompt': '''
                 concept art, highly detailed, intricate, sharp focus, digital art, 8 k
                 '''}
 
-res = requests.post('http://localhost:9102/', json = model_inputs)
+res = requests.post('http://localhost:8000/', json = model_inputs)
 result = res.json()
 encoding = result['encoding']
 print(str(encoding))
